@@ -1,0 +1,28 @@
+package com.pandora.infrastructure.annotations;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+/**
+ * data permission scope
+ *
+ * @author rouyi valarchie
+ */
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface DataPermissionScope {
+
+    /**
+     * alias name of department table
+     */
+    String deptAlias() default "";
+
+    /**
+     * alias name of user table
+     */
+    String userAlias() default "";
+}

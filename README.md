@@ -7,15 +7,8 @@
    <a target="_blank" href="https://bladex.vip">
    <img src="https://img.shields.io/badge/Author-valarchie-ff69b4.svg" alt="Downloads">
  </a>
- <a target="_blank" href="https://bladex.vip">
-   <img src="https://img.shields.io/badge/Copyright%20-@Agileboot-%23ff3f59.svg" alt="Downloads">
- </a>
- </p>  
-<p align="center">
-
-<img alt="logo" height="200" src="https://oscimg.oschina.net/oscnet/up-eda2a402cc061f1f5f40d9ac4c084f4c98c.png">
-</p>
-<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">AgileBoot v1.6.0</h1>
+ </p>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">Pandora v1.0.0</h1>
 
 <h4 align="center">基于SpringBoot+Vue3前后端分离的Java快速开发框架</h4>
 <p align="center">
@@ -23,9 +16,8 @@
 
 ## ⚡平台简介⚡
 
-AgileBoot是一套开源的全栈精简快速开发平台，毫无保留给个人及企业免费使用。本项目的目标是做一款精简可靠，代码风格优良，项目规范的小型开发脚手架。
+Pandora是一套开源的全栈精简快速开发平台，毫无保留给个人及企业免费使用。本项目的目标是做一款精简可靠，代码风格优良，项目规范的小型开发脚手架。
 适合个人开发者的小型项目或者公司内部项目使用。也可作为供初学者学习使用的案例。
-
 
 * 前端采用Vue3、Element UI。对应前端仓库 [AgileBoot-Front-End](https://github.com/valarchie/AgileBoot-Back-End) ，保持同步更新。
 * 后端采用Spring Boot、Spring Security、Redis & Jwt、Mybatis Plus、MySql。
@@ -39,9 +31,6 @@ AgileBoot是一套开源的全栈精简快速开发平台，毫无保留给个�
 >
 > 😜 如果觉得项目对您有帮助，可以来个 ⭐ Star ⭐
 
-
-
-
 ## 🌴 项目背景 🌴
 本项目基于Ruoyi项目进行完全重构改造。  
 首先非常感谢Ruoyi作者。但是Ruoyi项目存在太多缺陷。
@@ -53,7 +42,6 @@ AgileBoot是一套开源的全栈精简快速开发平台，毫无保留给个�
 - 值的前后不统一，比如有的地方1代表是，有的地方1代表否
 - 很多很奇怪的代码写法（比如return result > 0 ? true:false..    一言难尽）
 - 业务逻辑不集中，代码可读性较差。
-
 
 于是我做了大量的重构工作。
 
@@ -98,7 +86,6 @@ AgileBoot是一套开源的全栈精简快速开发平台，毫无保留给个�
 
 ## ✨ 使用 ✨
 
-
 ### 开发环境
 
 - JDK
@@ -121,7 +108,6 @@ AgileBoot是一套开源的全栈精简快速开发平台，毫无保留给个�
 | `h2`           | 内存数据库           | 1.10.19           |
 | `jackson`      | 比较安全的Json框架     | follow springboot |
 
-
 ### 启动说明
 
 #### 前置准备： 下载前后端代码
@@ -133,27 +119,17 @@ git clone https://github.com/valarchie/AgileBoot-Front-End
 
 #### 安装好Mysql和Redis
 
-
 #### 后端启动
 ```
 1. 生成所需的数据库表
-找到后端项目根目录下的sql目录中的agileboot_xxxxx.sql脚本文件。 导入到你新建的数据库中。
+找到后端项目根目录下的sql目录中的pandora_xxxxx.sql脚本文件。 导入到你新建的数据库中。
 
 2. 在infrastructure模块底下，找到resource目录下的application-dev.yml文件
 配置数据库以及Redis的 地址、端口、账号密码
 
 3. 在根目录执行mvn install
 
-4. 找到agileboot-admin模块中的AgileBootAdminApplication启动类，直接启动即可
-
-5. 当出现以下字样即为启动成功
-  ____   _                _                                                           __         _  _ 
- / ___| | |_  __ _  _ __ | |_   _   _  _ __    ___  _   _   ___  ___  ___  ___  ___  / _| _   _ | || |
- \___ \ | __|/ _` || '__|| __| | | | || '_ \  / __|| | | | / __|/ __|/ _ \/ __|/ __|| |_ | | | || || |
-  ___) || |_| (_| || |   | |_  | |_| || |_) | \__ \| |_| || (__| (__|  __/\__ \\__ \|  _|| |_| || ||_|
- |____/  \__|\__,_||_|    \__|  \__,_|| .__/  |___/ \__,_| \___|\___|\___||___/|___/|_|   \__,_||_|(_)
-                                      |_|                             
-
+4. 找到pandora-admin模块中的PandoraApplication启动类，直接启动即可
 ```
 
 #### 前端启动
@@ -174,7 +150,6 @@ ready in 4376ms.
 
 详细过程在这个文章中：[AgileBoot - 手把手一步一步带你Run起全栈项目(SpringBoot+Vue3)](https://juejin.cn/post/7153812187834744845)
 
-
 > 对于想要尝试全栈项目的前端人员，这边提供更简便的后端启动方式，无需配置Mysql和Redis直接启动
 #### 无Mysql/Redis 后端启动
 ```
@@ -185,20 +160,16 @@ spring.profiles.active: basic,dev
 改为
 spring.profiles.active: basic,test
 
-agileboot.embedded.mysql: false
-agileboot.embedded.redis: false
+pandora.embedded.mysql: false
+pandora.embedded.redis: false
 改为
-agileboot.embedded.mysql: true
-agileboot.embedded.redis: true
+pandora.embedded.mysql: true
+pandora.embedded.redis: true
 
-
-3. 找到agileboot-admin模块中的AgileBootAdminApplication启动类，直接启动即可
+3. 找到pandora-admin模块中的pandoraApplication启动类，直接启动即可
 ```
-
-
 ## 🙊 系统内置功能 🙊  
   
-
 🙂 大部分功能，均有通过 **单元测试** **集成测试** 保证质量。
 
 |     | 功能    | 描述                             |
@@ -218,22 +189,21 @@ agileboot.embedded.redis: true
 |     | 缓存监控  | 对系统的缓存信息查询，命令统计等                   |
 |     | 连接池监视  | 监视当前系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈     |
 
-
 目前版本是V1.5，将在2.0版本后陆续新增新功能。
 
 ## 🐯 工程结构 🐯
 
 ``` 
-agileboot
-├── agileboot-admin -- 管理后台接口模块（供后台调用）
+pandora
+├── pandora-admin -- 管理后台接口模块（供后台调用）
 │
-├── agileboot-api -- 开放接口模块（供客户端调用）
+├── pandora-api -- 开放接口模块（供客户端调用）
 │
-├── agileboot-common -- 精简基础工具模块
+├── pandora-common -- 精简基础工具模块
 │
-├── agileboot-infrastructure -- 基础设施模块（主要是配置和集成）
+├── pandora-infrastructure -- 基础设施模块（主要是配置和集成）
 │
-├── agileboot-domain -- 业务模块
+├── pandora-domain -- 业务模块
 ├    ├── user -- 用户模块（举例）
 ├         ├── command -- 命令参数接收模型（命令）
 ├         ├── dto -- 返回数据类
@@ -241,9 +211,9 @@ agileboot
 ├         ├── query -- 查询参数模型（查询）
 │         ├────── UserApplicationService -- 应用服务（事务层，操作领域模型类完成业务逻辑）
 │
-├── agileboot-integration-test -- 集成测试模块
+├── pandora-integration-test -- 集成测试模块
 │
-├── agileboot-orm -- 数据映射模块（仅包含数据相关逻辑）
+├── pandora-orm -- 数据映射模块（仅包含数据相关逻辑）
 ├    ├── entiy -- 实体类
 ├    ├── enums -- 数据相关枚举 
 ├    ├── mapper -- DAO 
@@ -260,24 +230,17 @@ agileboot
 **操作**：Controller > xxxCommand > xxxApplicationService > xxxModel(处理逻辑) > save 或者 update (本项目直接采用JPA的方式进行插入已经更新数据)
 
 --- 
-
 ## 🎅 技术文档 🎅
 * [AgileBoot - 基于SpringBoot + Vue3的前后端快速开发脚手架](https://juejin.cn/post/7152871067151777829)
 * [AgileBoot - 手把手一步一步带你Run起全栈项目(SpringBoot+Vue3)](https://juejin.cn/post/7153812187834744845)
 * [AgileBoot - 项目内统一的错误码设计](https://juejin.cn/post/7156062116712022023)
 * [AgileBoot - 如何集成内置数据库H2和内置Redis](https://juejin.cn/post/7158793441198112781)
-* 持续输出中
-
-
-
 
 ## 💥 在线体验 💥
 演示地址：www.agileboot.cc  
 >  账号密码：admin/admin123
 
-
 ### 演示图
-
 <table>
     <tr>
         <td>模块</td>
@@ -314,9 +277,7 @@ agileboot
         <td><img src="https://oscimg.oschina.net/oscnet/up-8370a0d02977eebf6dbf854c8450293c937.png"/></td>
         <td><img src="https://oscimg.oschina.net/oscnet/up-49003ed83f60f633e7153609a53a2b644f7.png"/></td>
     </tr>
-
 </table>
-
 
 ## 🌻 注意事项 🌻
 - IDEA会自动将.properties文件的编码设置为ISO-8859-1,请在Settings > Editor > File Encodings > Properties Files > 设置为UTF-8
@@ -325,15 +286,4 @@ agileboot
   - 填入数据库地址，账号密码，库名。然后填入所需的表名执行代码即可。（大概看一下代码就知道怎么填啦）
 - 项目基础环境搭建，请参考docker目录下的指南搭建。保姆级启动说明：
   - [AgileBoot - 手把手一步一步带你Run起全栈项目(SpringBoot+Vue3)](https://juejin.cn/post/7153812187834744845)
-- 注意：管理后台的后端启动类是AgileBoot**Admin**Application
-
-## 🎬 AgileBoot全栈交流群 🎬
-
-QQ群：  [![加入QQ群](https://img.shields.io/badge/1398880-blue.svg)](https://qm.qq.com/cgi-bin/qm/qr?k=TR5guoXS0HssErVWefmdFRirJvfpEvp1&jump_from=webapi&authKey=VkWMmVhp/pNdWuRD8sqgM+Sv2+Vy2qCJQSeLmeXlLtfER2RJBi6zL56PdcRlCmTs) 点击按钮入群。
-
-
-如果该项目对您有帮助，可以请作者喝个咖啡~  
-
-
-<img alt="logo" height="200" src="https://oscimg.oschina.net/oscnet/up-261828407c9089ad1cc0ce3f41a0ef3fbc0.png">
-
+- 注意：管理后台的后端启动类是PandoraApplication
