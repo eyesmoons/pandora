@@ -149,13 +149,6 @@ pandora
 └──  └── service -- 服务层
 ```
 
-### 代码流转
-
-请求分为两类：一类是查询，一类是操作（即对数据有进行更新）。
-
-**查询**：Controller > xxxQuery > xxxApplicationService > xxxService(Db) > xxxMapper  
-**操作**：Controller > xxxCommand > xxxApplicationService > xxxModel(处理逻辑) > save 或者 update (本项目直接采用JPA的方式进行插入已经更新数据)
-
 ## 注意事项
 - IDEA会自动将.properties文件的编码设置为ISO-8859-1,请在Settings > Editor > File Encodings > Properties Files > 设置为UTF-8
 - 请导入统一的代码格式化模板（Google）: Settings > Editor > Code Style > Java > 设置按钮 > import schema > 选择项目根目录下的GoogleStyle.xml文件
