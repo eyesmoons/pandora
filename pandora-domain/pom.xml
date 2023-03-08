@@ -36,7 +36,7 @@
 
         <dependency>
             <groupId>com.pandora</groupId>
-            <artifactId>pandora-infrastructure</artifactId>
+            <artifactId>pandora-core</artifactId>
         </dependency>
 
         <dependency>

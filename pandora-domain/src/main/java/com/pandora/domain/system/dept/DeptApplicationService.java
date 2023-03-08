@@ -10,7 +10,7 @@ import com.pandora.domain.system.dept.dto.DeptDTO;
 import com.pandora.domain.system.dept.model.DeptModel;
 import com.pandora.domain.system.dept.model.DeptModelFactory;
 import com.pandora.domain.system.dept.query.DeptQuery;
-import com.pandora.infrastructure.web.domain.login.LoginUser;
+import com.pandora.core.web.domain.login.LoginUser;
 import com.pandora.dao.system.entity.SysDeptEntity;
 import com.pandora.dao.system.entity.SysRoleEntity;
 import com.pandora.service.system.ISysDeptService;

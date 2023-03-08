@@ -6,7 +6,7 @@ import com.pandora.domain.system.config.dto.ConfigDTO;
 import com.pandora.domain.system.config.model.ConfigModel;
 import com.pandora.domain.system.config.model.ConfigModelFactory;
 import com.pandora.domain.system.config.query.ConfigQuery;
-import com.pandora.infrastructure.cache.CacheCenter;
+import com.pandora.core.cache.CacheCenter;
 import com.pandora.dao.system.entity.SysConfigEntity;
 import com.pandora.service.system.ISysConfigService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

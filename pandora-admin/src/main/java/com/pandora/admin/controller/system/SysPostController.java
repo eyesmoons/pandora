@@ -10,7 +10,7 @@ import com.pandora.domain.system.post.dto.PostDTO;
 import com.pandora.domain.system.post.PostApplicationService;
 import com.pandora.domain.system.post.query.PostQuery;
 import com.pandora.domain.system.post.command.UpdatePostCommand;
-import com.pandora.infrastructure.annotations.AccessLog;
+import com.pandora.core.annotations.AccessLog;
 import com.pandora.dao.system.enums.dictionary.BusinessTypeEnum;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;

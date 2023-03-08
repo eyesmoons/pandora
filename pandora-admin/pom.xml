@@ -19,7 +19,7 @@
         <!-- 核心模块-->
         <dependency>
             <groupId>com.pandora</groupId>
-            <artifactId>pandora-infrastructure</artifactId>
+            <artifactId>pandora-core</artifactId>
         </dependency>
 
         <!-- 业务领域 -->

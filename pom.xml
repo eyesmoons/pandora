@@ -179,7 +179,7 @@
             <!-- 核心模块-->
             <dependency>
                 <groupId>com.pandora</groupId>
-                <artifactId>pandora-infrastructure</artifactId>
+                <artifactId>pandora-core</artifactId>
                 <version>${pandora.version}</version>
             </dependency>
 
@@ -194,6 +194,12 @@
             <dependency>
                 <groupId>com.pandora</groupId>
                 <artifactId>pandora-common</artifactId>
+                <version>${pandora.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.pandora</groupId>
+                <artifactId>pandora-api</artifactId>
                 <version>${pandora.version}</version>
             </dependency>
 
@@ -237,9 +243,10 @@
         <module>pandora-admin</module>
         <module>pandora-common</module>
         <module>pandora-domain</module>
-        <module>pandora-infrastructure</module>
+        <module>pandora-core</module>
         <module>pandora-dao</module>
         <module>pandora-service</module>
+        <module>pandora-api</module>
     </modules>
     <packaging>pom</packaging>
 

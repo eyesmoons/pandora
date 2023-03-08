@@ -9,7 +9,7 @@ import com.pandora.domain.system.notice.dto.NoticeDTO;
 import com.pandora.domain.system.notice.NoticeApplicationService;
 import com.pandora.domain.system.notice.query.NoticeQuery;
 import com.pandora.domain.system.notice.command.NoticeUpdateCommand;
-import com.pandora.infrastructure.annotations.AccessLog;
+import com.pandora.core.annotations.AccessLog;
 import com.pandora.dao.system.enums.dictionary.BusinessTypeEnum;
 import java.util.List;
 import javax.validation.constraints.NotNull;

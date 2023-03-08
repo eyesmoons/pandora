@@ -14,10 +14,13 @@ import com.pandora.domain.system.dept.model.DeptModelFactory;
 import com.pandora.domain.system.role.command.UpdateRoleCommand;
 import com.pandora.domain.system.role.model.RoleModel;
 import com.pandora.domain.system.role.model.RoleModelFactory;
-import com.pandora.infrastructure.web.domain.login.LoginUser;
+import com.pandora.core.datasource.DynamicDataSourceContextHolder;
+import com.pandora.core.web.domain.login.LoginUser;
 import com.pandora.service.metadata.IMetadataSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Objects;
 
 @Service
 public class MetaDatasourceService {
@@ -50,5 +53,9 @@ public class MetaDatasourceService {
     public MetaDatasourceDTO getDatasourceInfo(Long datasourceId) {
         MetaDatasourceEntity byId = metadataSourceService.getById(datasourceId);
         return new MetaDatasourceDTO(byId);
+    }
+
+    public Boolean testConnection(Long datasourceId) {
+        return true;
     }
 }

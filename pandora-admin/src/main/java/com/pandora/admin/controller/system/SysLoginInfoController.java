@@ -10,7 +10,7 @@ import com.pandora.domain.common.command.BulkOperationCommand;
 import com.pandora.domain.system.logininfo.dto.LoginInfoDTO;
 import com.pandora.domain.system.logininfo.LoginInfoApplicationService;
 import com.pandora.domain.system.logininfo.query.LoginInfoQuery;
-import com.pandora.infrastructure.annotations.AccessLog;
+import com.pandora.core.annotations.AccessLog;
 import com.pandora.dao.system.enums.dictionary.BusinessTypeEnum;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;

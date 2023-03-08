@@ -4,7 +4,7 @@ import com.pandora.dao.metadata.entity.MetaDatasourceEntity;
 import com.pandora.dao.system.entity.SysUserEntity;
 import com.pandora.dao.system.enums.dictionary.StatusEnum;
 import com.pandora.dao.system.enums.interfaces.BasicEnumUtil;
-import com.pandora.infrastructure.cache.CacheCenter;
+import com.pandora.core.cache.CacheCenter;
 import lombok.Data;
 
 import java.util.Date;

@@ -1,6 +1,6 @@
 package com.pandora.domain.system.notice.dto;
 
-import com.pandora.infrastructure.cache.CacheCenter;
+import com.pandora.core.cache.CacheCenter;
 import com.pandora.dao.system.entity.SysNoticeEntity;
 import com.pandora.dao.system.entity.SysUserEntity;
 import java.util.Date;

@@ -6,7 +6,7 @@ import com.pandora.common.exception.ApiException;
 import com.pandora.common.exception.error.ErrorCode;
 import com.pandora.common.exception.error.ErrorCode.Business;
 import com.pandora.domain.system.role.command.UpdateRoleCommand;
-import com.pandora.infrastructure.web.domain.login.LoginUser;
+import com.pandora.core.web.domain.login.LoginUser;
 import com.pandora.dao.system.entity.SysRoleEntity;
 import com.pandora.dao.system.entity.SysRoleMenuEntity;
 import com.pandora.dao.system.enums.dictionary.StatusEnum;

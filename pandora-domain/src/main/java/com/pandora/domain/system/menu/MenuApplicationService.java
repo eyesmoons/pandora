@@ -14,7 +14,7 @@ import com.pandora.domain.system.menu.model.MenuModel;
 import com.pandora.domain.system.menu.model.MenuModelFactory;
 import com.pandora.domain.system.menu.model.RouterModel;
 import com.pandora.domain.system.menu.query.MenuQuery;
-import com.pandora.infrastructure.web.domain.login.LoginUser;
+import com.pandora.core.web.domain.login.LoginUser;
 import com.pandora.dao.system.entity.SysMenuEntity;
 import com.pandora.dao.system.enums.MenuTypeEnum;
 import com.pandora.service.system.ISysMenuService;

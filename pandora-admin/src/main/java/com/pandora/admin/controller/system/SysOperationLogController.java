@@ -9,7 +9,7 @@ import com.pandora.domain.common.command.BulkOperationCommand;
 import com.pandora.domain.system.operationlog.dto.OperationLogDTO;
 import com.pandora.domain.system.operationlog.OperationLogApplicationService;
 import com.pandora.domain.system.operationlog.query.OperationLogQuery;
-import com.pandora.infrastructure.annotations.AccessLog;
+import com.pandora.core.annotations.AccessLog;
 import com.pandora.dao.system.enums.dictionary.BusinessTypeEnum;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
