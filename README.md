@@ -16,75 +16,14 @@
 
 ## ⚡平台简介⚡
 
-Pandora是一套开源的全栈精简快速开发平台，毫无保留给个人及企业免费使用。本项目的目标是做一款精简可靠，代码风格优良，项目规范的小型开发脚手架。
-适合个人开发者的小型项目或者公司内部项目使用。也可作为供初学者学习使用的案例。
+Pandora是一套开源的全栈精简快速开发平台。
 
-* 前端采用Vue3、Element UI。对应前端仓库 [AgileBoot-Front-End](https://github.com/valarchie/AgileBoot-Back-End) ，保持同步更新。
+* 前端采用Vue3、Element UI。对应前端仓库 [pandora-ui](https://github.com/eyesmoons/pandora-ui)
 * 后端采用Spring Boot、Spring Security、Redis & Jwt、Mybatis Plus、MySql。
-* 权限认证使用Jwt，支持多终端认证系统。
-* 支持加载动态权限菜单，多方式轻松权限控制。
-* 🙌 有大量的单元测试，集成测试覆盖确保业务逻辑正确。🙌
+* 权限认证使用Jwt。
+* 支持加载动态权限菜单。
 
-> 有任何问题或者建议，可以在 _Issues_ 中提给作者。  
-> 
-> 您的Issue比Star更重要 😆
->
-> 😜 如果觉得项目对您有帮助，可以来个 ⭐ Star ⭐
-
-## 🌴 项目背景 🌴
-本项目基于Ruoyi项目进行完全重构改造。  
-首先非常感谢Ruoyi作者。但是Ruoyi项目存在太多缺陷。
-- 命名比较乱七八糟（很多很糟糕的命名，包括机翻英语乱用）
-- 项目分包以及模块比较乱
-- 比较原始的Controller > Service > DAO的开发模式。过于面向过程。
-- 一大堆自己造的轮子，并且没有UT覆盖。
-- 大量逻辑嵌套在if else块当中
-- 值的前后不统一，比如有的地方1代表是，有的地方1代表否
-- 很多很奇怪的代码写法（比如return result > 0 ? true:false..    一言难尽）
-- 业务逻辑不集中，代码可读性较差。
-
-于是我做了大量的重构工作。
-
-### 重构内容
-
-- 规范：
-    - 切分不同环境的启动文件
-    - 统一设计异常类
-    - 统一设计错误码并集中处理异常
-    - 统一系统内的变量并集中管理
-    - 统一返回模型
-    - 引入Google代码格式化模板
-    - 后端代码的命名基本都整改OK
-    - 前端代码的命名也非常混乱，进行了整改
-    - 规范系统内的常量
-- 整改：
-    - 引入hutool包以及guava包去掉大量自己造的轮子，尽可能使用现成的轮子
-    - 去除代码中大量的warning
-    - 引入lombok去除大量getter setter代码
-    - 调整日志级别
-    - 字典类型数据完全用Enum进行代替
-    - 移除SQL注入的Filter，因为迁移到Mybatis Plus就不会有这个注入的问题
-    - XSS直接通过JSON序列化进行转义。
-    - 替换掉很多Deprecated的类以及配置
-    - 替换fastJson为Jackson
-    - 数据库的整体重构设计，缩减至10张表。
-    - 重新设计异步代码
-    - 前后端密码加密传输（更严谨的话，还是需要HTTPS）
-    - 重构权限校验和数据权限校验（直接都通过注解的形式）
-- 优化：
-    - 优化异步服务
-    - 优化Redis缓存类，封装各个业务缓存，提供多级缓存实现
-    - 权限判断使用多级缓存
-    - IP地址查询引入离线包
-    - 前端优化字典数据缓存
-    - 启动优化
-    - i18n支持
-    - 优化excel工具类，代码更加简洁
-    - 将所有逻辑集中于Domain模块中
-    - 切面记录修改者和创建者
-    - 统一设置事务
-
-## ✨ 使用 ✨
+## 使用
 
 ### 开发环境
 
@@ -113,8 +52,8 @@ Pandora是一套开源的全栈精简快速开发平台，毫无保留给个人�
 #### 前置准备： 下载前后端代码
 
 ```
-git clone https://github.com/valarchie/AgileBoot-Back-End
-git clone https://github.com/valarchie/AgileBoot-Front-End
+git clone https://github.com/eyesmoons/pandora
+git clone https://github.com/eyesmoons/pandora-ui
 ```
 
 #### 安装好Mysql和Redis
@@ -124,7 +63,7 @@ git clone https://github.com/valarchie/AgileBoot-Front-End
 1. 生成所需的数据库表
 找到后端项目根目录下的sql目录中的pandora_xxxxx.sql脚本文件。 导入到你新建的数据库中。
 
-2. 在infrastructure模块底下，找到resource目录下的application-dev.yml文件
+2. 在core模块底下，找到resource目录下的application-dev.yml文件
 配置数据库以及Redis的 地址、端口、账号密码
 
 3. 在根目录执行mvn install
@@ -147,9 +86,6 @@ vite v2.6.14 dev server running at:
 ready in 4376ms.
 
 ```
-
-详细过程在这个文章中：[AgileBoot - 手把手一步一步带你Run起全栈项目(SpringBoot+Vue3)](https://juejin.cn/post/7153812187834744845)
-
 > 对于想要尝试全栈项目的前端人员，这边提供更简便的后端启动方式，无需配置Mysql和Redis直接启动
 #### 无Mysql/Redis 后端启动
 ```
@@ -169,8 +105,6 @@ pandora.embedded.redis: true
 3. 找到pandora-admin模块中的pandoraApplication启动类，直接启动即可
 ```
 ## 🙊 系统内置功能 🙊  
-  
-🙂 大部分功能，均有通过 **单元测试** **集成测试** 保证质量。
 
 |     | 功能    | 描述                             |
 |-----|-------|--------------------------------|
@@ -189,19 +123,17 @@ pandora.embedded.redis: true
 |     | 缓存监控  | 对系统的缓存信息查询，命令统计等                   |
 |     | 连接池监视  | 监视当前系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈     |
 
-目前版本是V1.5，将在2.0版本后陆续新增新功能。
-
 ## 🐯 工程结构 🐯
 
 ``` 
 pandora
-├── pandora-admin -- 管理后台接口模块（供后台调用）
+├── pandora-admin -- 管理后台接口模块
 │
-├── pandora-api -- 开放接口模块（供客户端调用）
+├── pandora-api -- 开放接口模块
 │
-├── pandora-common -- 精简基础工具模块
+├── pandora-common -- 工具模块
 │
-├── pandora-infrastructure -- 基础设施模块（主要是配置和集成）
+├── pandora-core -- 核心基础模块
 │
 ├── pandora-domain -- 业务模块
 ├    ├── user -- 用户模块（举例）
@@ -211,14 +143,12 @@ pandora
 ├         ├── query -- 查询参数模型（查询）
 │         ├────── UserApplicationService -- 应用服务（事务层，操作领域模型类完成业务逻辑）
 │
-├── pandora-integration-test -- 集成测试模块
-│
-├── pandora-orm -- 数据映射模块（仅包含数据相关逻辑）
+├── pandora-dao -- 数据映射模块（仅包含数据相关逻辑）
 ├    ├── entiy -- 实体类
-├    ├── enums -- 数据相关枚举 
-├    ├── mapper -- DAO 
-├    ├── query -- 封装查询对象 
-├    ├── result -- 封装多表查询对象 
+├    ├── enums -- 数据相关枚举
+├    ├── mapper -- DAO
+├    ├── query -- 封装查询对象
+├    ├── result -- 封装多表查询对象
 └──  └── service -- 服务层
 ```
 
@@ -229,61 +159,10 @@ pandora
 **查询**：Controller > xxxQuery > xxxApplicationService > xxxService(Db) > xxxMapper  
 **操作**：Controller > xxxCommand > xxxApplicationService > xxxModel(处理逻辑) > save 或者 update (本项目直接采用JPA的方式进行插入已经更新数据)
 
---- 
-## 🎅 技术文档 🎅
-* [AgileBoot - 基于SpringBoot + Vue3的前后端快速开发脚手架](https://juejin.cn/post/7152871067151777829)
-* [AgileBoot - 手把手一步一步带你Run起全栈项目(SpringBoot+Vue3)](https://juejin.cn/post/7153812187834744845)
-* [AgileBoot - 项目内统一的错误码设计](https://juejin.cn/post/7156062116712022023)
-* [AgileBoot - 如何集成内置数据库H2和内置Redis](https://juejin.cn/post/7158793441198112781)
-
-## 💥 在线体验 💥
-演示地址：www.agileboot.cc  
->  账号密码：admin/admin123
-
-### 演示图
-<table>
-    <tr>
-        <td>模块</td>
-        <td>演示图</td>
-        <td>演示图</td>
-    </tr>
-    <tr>
-        <td>登录 & 首页</td>
-        <td><img src="https://oscimg.oschina.net/oscnet/cd1f90be5f2684f4560c9519c0f2a232ee8.jpg"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/1cbcf0e6f257c7d3a063c0e3f2ff989e4b3.jpg"/></td>
-    </tr>
-    <tr>
-        <td>用户模块</td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-8074972883b5ba0622e13246738ebba237a.png"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-9f88719cdfca9af2e58b352a20e23d43b12.png"/></td>
-    </tr>
-    <tr>
-        <td>角色模块</td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-39bf2584ec3a529b0d5a3b70d15c9b37646.png"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-936ec82d1f4872e1bc980927654b6007307.png"/></td>
-    </tr>
-	<tr>
-        <td>菜单模块</td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-b2d62ceb95d2dd9b3fbe157bb70d26001e9.png"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-d67451d308b7a79ad6819723396f7c3d77a.png"/></td>
-    </tr>	 
-    <tr>
-        <td>个人中心模块</td>
-        <td><img src="https://oscimg.oschina.net/oscnet/5e8c387724954459291aafd5eb52b456f53.jpg"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/644e78da53c2e92a95dfda4f76e6d117c4b.jpg"/></td>
-    </tr>
-	<tr>
-        <td>登录日志模块</td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-8370a0d02977eebf6dbf854c8450293c937.png"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-49003ed83f60f633e7153609a53a2b644f7.png"/></td>
-    </tr>
-</table>
-
 ## 🌻 注意事项 🌻
 - IDEA会自动将.properties文件的编码设置为ISO-8859-1,请在Settings > Editor > File Encodings > Properties Files > 设置为UTF-8
 - 请导入统一的代码格式化模板（Google）: Settings > Editor > Code Style > Java > 设置按钮 > import schema > 选择项目根目录下的GoogleStyle.xml文件
 - 如需要生成新的表，请使用CodeGenerator类进行生成。
-  - 填入数据库地址，账号密码，库名。然后填入所需的表名执行代码即可。（大概看一下代码就知道怎么填啦）
+  - 填入数据库地址，账号密码，库名。然后填入所需的表名执行代码即可。
 - 项目基础环境搭建，请参考docker目录下的指南搭建。保姆级启动说明：
   - [AgileBoot - 手把手一步一步带你Run起全栈项目(SpringBoot+Vue3)](https://juejin.cn/post/7153812187834744845)
-- 注意：管理后台的后端启动类是PandoraApplication
