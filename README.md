@@ -1,12 +1,9 @@
 
 <p align="center">
-      <img src="https://img.shields.io/badge/Release-V1.5.0-green.svg" alt="Downloads">
-      <img src="https://img.shields.io/badge/JDK-1.8+-green.svg" alt="Build Status">
+  <img src="https://img.shields.io/badge/Release-V1.5.0-green.svg" alt="Downloads">
+  <img src="https://img.shields.io/badge/JDK-1.8+-green.svg" alt="Build Status">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Build Status">
    <img src="https://img.shields.io/badge/Spring%20Boot-2.7.1-blue.svg" alt="Downloads">
-   <a target="_blank" href="https://bladex.vip">
-   <img src="https://img.shields.io/badge/Author-valarchie-ff69b4.svg" alt="Downloads">
- </a>
  </p>
 <h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">Pandora v1.0.0</h1>
 
@@ -14,7 +11,7 @@
 <p align="center">
 </p>
 
-## ⚡平台简介⚡
+## 平台简介
 
 Pandora是一套开源的全栈精简快速开发平台。
 
@@ -104,26 +101,26 @@ pandora.embedded.redis: true
 
 3. 找到pandora-admin模块中的pandoraApplication启动类，直接启动即可
 ```
-## 🙊 系统内置功能 🙊  
+## 系统内置功能
 
-|     | 功能    | 描述                             |
-|-----|-------|--------------------------------|
-|     | 用户管理  | 用户是系统操作者，该功能主要完成系统用户配置         |
-| ⭐   | 部门管理  | 配置系统组织机构（公司、部门、小组），树结构展现支持数据权限 |
-| ⭐   | 岗位管理  | 配置系统用户所属担任职务                   |
-|     | 菜单管理  | 配置系统菜单、操作权限、按钮权限标识等，本地缓存提供性能   |
-| ⭐   | 角色管理  | 角色菜单权限分配、设置角色按机构进行数据范围权限划分    |
-|     | 参数管理  | 对系统动态配置常用参数                    |
-|     | 通知公告  | 系统通知公告信息发布维护                   |
-| 🚀  | 操作日志  | 系统正常操作日志记录和查询；系统异常信息日志记录和查询   |
-|     | 登录日志  | 系统登录日志记录查询包含登录异常                   |
-|     | 在线用户  | 当前系统中活跃用户状态监控                   |
-|     | 系统接口  | 根据业务代码自动生成相关的api接口文档             |
-|     | 服务监控  | 监视当前系统CPU、内存、磁盘、堆栈等相关信息             |
-|     | 缓存监控  | 对系统的缓存信息查询，命令统计等                   |
-|     | 连接池监视  | 监视当前系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈     |
+| 功能    | 描述                             |
+|-------|--------------------------------|
+| 用户管理  | 用户是系统操作者，该功能主要完成系统用户配置         |
+| 部门管理  | 配置系统组织机构（公司、部门、小组），树结构展现支持数据权限 |
+| 岗位管理  | 配置系统用户所属担任职务                   |
+| 菜单管理  | 配置系统菜单、操作权限、按钮权限标识等，本地缓存提供性能   |
+| 角色管理  | 角色菜单权限分配、设置角色按机构进行数据范围权限划分    |
+| 参数管理  | 对系统动态配置常用参数                    |
+| 通知公告  | 系统通知公告信息发布维护                   |
+ 操作日志  | 系统正常操作日志记录和查询；系统异常信息日志记录和查询   |
+| 登录日志  | 系统登录日志记录查询包含登录异常                   |
+| 在线用户  | 当前系统中活跃用户状态监控                   |
+| 系统接口  | 根据业务代码自动生成相关的api接口文档             |
+| 服务监控  | 监视当前系统CPU、内存、磁盘、堆栈等相关信息             |
+| 缓存监控  | 对系统的缓存信息查询，命令统计等                   |
+| 连接池监视  | 监视当前系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈     |
 
-## 🐯 工程结构 🐯
+## 工程结构
 
 ``` 
 pandora
@@ -159,7 +156,7 @@ pandora
 **查询**：Controller > xxxQuery > xxxApplicationService > xxxService(Db) > xxxMapper  
 **操作**：Controller > xxxCommand > xxxApplicationService > xxxModel(处理逻辑) > save 或者 update (本项目直接采用JPA的方式进行插入已经更新数据)
 
-## 🌻 注意事项 🌻
+## 注意事项
 - IDEA会自动将.properties文件的编码设置为ISO-8859-1,请在Settings > Editor > File Encodings > Properties Files > 设置为UTF-8
 - 请导入统一的代码格式化模板（Google）: Settings > Editor > Code Style > Java > 设置按钮 > import schema > 选择项目根目录下的GoogleStyle.xml文件
 - 如需要生成新的表，请使用CodeGenerator类进行生成。
